@@ -1,5 +1,6 @@
 # backend-ecoleta
-Aplicação backend desenvolvido em NodeJS para servir como base para a aplicação EColeta
+
+Projeto Open Source desenvolvido na Next Level Week da Rocketseat utilizando TypeScript, NodeJS, ReactJS e React Native. Com objetivo de criar uma conexão entre empresas e/ou entidades que coletam resíduos (orgânicos e inorgânicos) a pessoas/empresas que necessitam descartar esses resíduos.
 
 # libs utilizadas
 - express
@@ -13,7 +14,11 @@ Aplicação backend desenvolvido em NodeJS para servir como base para a aplicaç
 - @types/express
 
 # Comandos
-npx tsc --init
-npx ts-node src/server.ts   
-npx knex migrate:latest --knexfile knexfile.ts magrate:latest
+- npx tsc --init
+- npx ts-node src/server.ts   
+- npx knex migrate:latest --knexfile knexfile.ts magrate:latest
     - npm run knex:migrate
+- knex --knexfile knexfile.ts seed:run
+    - npm run knex:seed
+    
+- CTRL + SHIFT + P -> PEsquisar aplicativos ou configuração do VSCode
