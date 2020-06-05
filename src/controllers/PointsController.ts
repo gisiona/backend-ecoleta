@@ -44,7 +44,7 @@ class PointsController {
 
         // await (await trx).commit();
 
-        return response.json({ sucess: true });
+        return response.json({ pointItems });
     }
 
 
@@ -62,9 +62,37 @@ class PointsController {
             return response.status(400).json({ error: 'Não foi encontrado nenhum registro'});
         }
 
-        return response.json(point);
+        const items = await knex('items')
+            .join('point_items', 'items.id', '=', 'point_items.item_id')
+            .where('point_items.point_id', id)
+
+        return response.json( { point, items });
     }
 
+    async index (request: Request, response: Response ){
+
+        const { city, uf, items } = request.query;
+
+        const parserItems = String(items)
+                            .split(',')
+                            .map(item => Number(item.trim()));
+        
+        console.log(parserItems);
+
+        const points = await knex('points')
+                        .join('point_items', 'points.id', '=', 'point_items.point_id')
+                        .whereIn('point_items.item_id', parserItems)
+                        .where('city', String(city))
+                        .where('uf', String(uf))
+                        .distinct()
+                        .select('points.*');
+
+
+        console.log(points );
+
+
+        return response.json({ points });
+    }
 
 
 }
