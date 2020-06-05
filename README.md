@@ -9,9 +9,11 @@ Projeto Open Source desenvolvido na Next Level Week da Rocketseat utilizando Typ
 - ts-node-dev
 - knex
 - sqlite3
+- cors
 
 # Types instalados
 - @types/express
+- @types/cors
 
 # Comandos
 - npx tsc --init
