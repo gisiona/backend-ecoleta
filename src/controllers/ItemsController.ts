@@ -10,6 +10,7 @@ class ItemsController {
 
         const serializedItems = items.map( item => {
             return {
+                id: item.id,
                 title:  item.titulo,
                 image_url: `${BASE_URL_STATIC_UPLOADS}/${item.image}`
             };

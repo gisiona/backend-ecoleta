@@ -20,7 +20,7 @@ class PointsController {
 
 
         const itemsIds = await knex('points').insert({
-            image: 'https://images.unsplash.com/photo-1552825896-8059df63a1fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+            image: 'https://images.unsplash.com/photo-1552825896-8059df63a1fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60    ',
             nome,
             email,
             whatsapp,
@@ -91,7 +91,7 @@ class PointsController {
         console.log(points );
 
 
-        return response.json({ points });
+        return response.json( points );
     }
 
 
