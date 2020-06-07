@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import connectionDB from '../database/connection';
 
-const BASE_URL_STATIC_UPLOADS = 'http://localhost:3000/uploads';
+const BASE_URL_STATIC_UPLOADS = 'http://192.168.0.210:3000/uploads';
 
 class ItemsController {
 
